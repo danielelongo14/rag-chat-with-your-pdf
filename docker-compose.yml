@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    build: ./ragApp
+    ports:
+      - "8000:8000"
+    environment:
+      - GROK_RAGAPP=${GROK_RAGAPP}
+      - LLAMA_CLOUD_KEY=${LLAMA_CLOUD_KEY}
+      - WEAVIATE_API_KEY=${WEAVIATE_API_KEY}
+      - WEAVIATE_CLUSTER_URL=${WEAVIATE_CLUSTER_URL}
+      - DATA_FOLDER=${DATA_FOLDER}
+    volumes:
+      - ./data:/app/data
