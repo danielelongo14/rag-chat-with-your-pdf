@@ -20,50 +20,11 @@ DATA_FOLDER: Directory to store uploaded documents.
 WEAVIATE_CLUSTER_URL: Weaviate instance URL.
 WEAVIATE_API_KEY: Weaviate API key.
 Setup
-Clone the Repository
 
-bash
-Copia codice
+Clone the Repository
 git clone https://github.com/danielelongo14/rag-chat-with-your-pdf.git
 cd rag-chat-with-your-pdf
-Backend Setup
-
-bash
-Copia codice
-cd ragApp
-pip install -r requirements.txt
-Frontend Setup
-
-bash
-Copia codice
-cd frontend
-npm install
-Docker Setup (Optional)
-
-bash
-Copia codice
 docker-compose up --build
-Running the Application
-Start the Backend
-
-bash
-Copia codice
-cd ragApp
-uvicorn main:app --reload
-Start the Frontend
-
-bash
-Copia codice
-cd frontend
-npm start
-Usage
-Upload a Document
-
-Navigate to the upload page and upload a PDF document. The backend will process the document, extract its content, generate embeddings, and store them in Weaviate.
-
-Chat with the Document
-
-Use the chat interface to query the uploaded document.
 
 Key Components
 FastAPI: Backend framework for handling requests.
@@ -71,8 +32,8 @@ LlamaParse: Library for parsing PDF documents.
 Weaviate: Vector database for storing and retrieving embeddings.
 React: Frontend framework for the chat interface.
 Repository Structure
-csharp
-Copia codice
+
+
 rag-chat-with-your-pdf/
 ├── frontend/          # Frontend React application
 ├── ragApp/            # Backend FastAPI application
